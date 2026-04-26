@@ -33,7 +33,7 @@ public class LogAnalyzer
     public int numberOfAccesses()
     {
         int i = 0; //starts the count at zero
-        
+        reader.reset();         //adds reset to avoid iterator(LogfileReader) starting from previous index
         while(reader.hasNext()) //will loop until the end (iterator detects no next item)
         {
             reader.next();
@@ -42,6 +42,7 @@ public class LogAnalyzer
         
         return i; //returns the count
     }
+    
     
     
     /**
