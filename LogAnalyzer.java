@@ -67,15 +67,14 @@ public class LogAnalyzer
     {
         int store = 0;  //stores the index of the busiest hour
         int toBeat = 0; //stores the current lowest number starting at zero cause no negatives
-        int i = 0;
-        for (int count : hourCounts)
+
+        for (int i = 1; i< hourCounts.length; i++)
         {
-            if(count < toBeat)
+            if(hourCounts[i] < toBeat)
             {
-                toBeat = count;
+                toBeat = hourCounts[i];
                 store = i;
             }
-            i++;    //yeahhh i shouldve just use a regular forloop lol
         }
         
         return store;
