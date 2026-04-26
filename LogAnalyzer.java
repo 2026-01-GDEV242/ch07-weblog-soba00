@@ -13,13 +13,20 @@ public class LogAnalyzer
     private LogfileReader reader;
 
     /**
-     * Create an object to analyze hourly web accesses.
+     * Create an object LogAnalyzer to analyze hourly web accesses using demoData.txt 
+     * as default.
+     * 
      */
     public LogAnalyzer()
     {
-        this("demoData.txt"); //acts as default fallback behavior
+        this("demoData.txt"); //acts as default fallback behavior using demoData.txt
     }
     
+    
+    /**
+     * Create an object LogAnalyzer using a specific file
+     * @param filename name of lof file to be analyized
+     */
     public LogAnalyzer(String filename)
     { 
         // Create the array object to hold the hourly
@@ -29,7 +36,11 @@ public class LogAnalyzer
         reader = new LogfileReader(filename);
     }
     
-    //loops through access log and counts how many appear
+    /**
+     * loops through access log and counts how many appear, reseting reader for next use
+     * 
+     * @return total nuber of access log entries
+     */
     public int numberOfAccesses()
     {
         int i = 0; //starts the count at zero
@@ -56,6 +67,11 @@ public class LogAnalyzer
         }
     }
     
+    /**
+     * Finds hour with highest number of access entries out of the whole log file
+     * 
+     * @return busiest hour in log file
+     */
     public int busiestHour()
     {
         int store = 0;  //stores the index of the busiest hour
@@ -75,6 +91,11 @@ public class LogAnalyzer
         return store;
     }
     
+    /**
+     * Finds hour with lowest number of access entries out of the whole log file
+     * 
+     * @return quietest hour in log file
+     */
     public int quietestHour()
     {
         int store = 0;  //stores the index of the busiest hour
@@ -93,7 +114,12 @@ public class LogAnalyzer
         return store;
     }
     
-    
+    /**
+     * Finds the two hour stretch with the hights total number of access entries and
+     * returns the starting hour
+     * 
+     * @return the fist hour of the busiest two hour stretch
+     */
     public int busiestTwoHour()
     {
         int store = 0;  //stores the index of the first hour the busiest pair
@@ -112,6 +138,8 @@ public class LogAnalyzer
         
         return store;
     }
+    
+    
     /**
      * Print the hourly counts.
      * These should have been set with a prior
