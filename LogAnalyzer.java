@@ -15,6 +15,11 @@ public class LogAnalyzer
     /**
      * Create an object to analyze hourly web accesses.
      */
+    public LogAnalyzer()
+    {
+        this("demoData.txt"); //acts as default fallback behavior
+    }
+    
     public LogAnalyzer(String filename)
     { 
         // Create the array object to hold the hourly
