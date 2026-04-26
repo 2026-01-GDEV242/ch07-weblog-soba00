@@ -56,7 +56,7 @@ public class LogAnalyzer
         }
     }
     
-        public int busiestHour()
+    public int busiestHour()
     {
         int store = 0;  //stores the index of the busiest hour
         int toBeat = 0; //stores the current highest number starting at zero cause no negatives
@@ -80,9 +80,10 @@ public class LogAnalyzer
         int store = 0;  //stores the index of the busiest hour
         int toBeat = hourCounts[0]; //stores the current lowest number starting at zero cause no negatives
 
-        for (int i = 1; i< hourCounts.length; i++)
+        for (int i = 1; i< hourCounts.length; i++) //learned my lesson
         {
-            if(hourCounts[i] < toBeat)
+            //checks if current hour is queier than current hour to beat
+            if(hourCounts[i] < toBeat)            
             {
                 toBeat = hourCounts[i];
                 store = i;
@@ -92,6 +93,25 @@ public class LogAnalyzer
         return store;
     }
     
+    
+    public int busiestTwoHour()
+    {
+        int store = 0;  //stores the index of first hour the busiest pair
+        int toBeat = 0; //stores the current highest number starting at zero cause no negatives
+        int i = 0;
+        for (int count : hourCounts)
+        {
+            
+            if(count > toBeat)
+            {
+                toBeat = count;
+                store = i;
+            }
+            i++; 
+        }
+        
+        return store;
+    }
     /**
      * Print the hourly counts.
      * These should have been set with a prior
