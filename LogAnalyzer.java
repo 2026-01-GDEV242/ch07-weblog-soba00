@@ -17,7 +17,7 @@ public class LogAnalyzer
      */
     public LogAnalyzer()
     {
-        this("demoData.txt"); //acts as default fallback behavior
+        this("weblog.txt"); //acts as default fallback behavior
     }
     
     public LogAnalyzer(String filename)
@@ -66,7 +66,7 @@ public class LogAnalyzer
     public int quietestHour()
     {
         int store = 0;  //stores the index of the busiest hour
-        int toBeat = 0; //stores the current lowest number starting at zero cause no negatives
+        int toBeat = hourCounts[0]; //stores the current lowest number starting at zero cause no negatives
 
         for (int i = 1; i< hourCounts.length; i++)
         {
