@@ -99,9 +99,9 @@ public class LogAnalyzer
         int store = 0;  //stores the index of the first hour the busiest pair
         int toBeat = hourCounts[0] + hourCounts[1]; //stores the current highest number starting at zero cause no negatives
         int comboCount = 0;
-        for (int i = 0; i< hourCounts.length; i++) //learned my lesson
+        for (int i = 0; i< hourCounts.length-1; i++) //learned my lesson
         {
-            comboCount = hourCounts[i]+hourCounts[i++];
+            comboCount = hourCounts[i]+hourCounts[i+1];
             
             if(comboCount > toBeat)            
             {
