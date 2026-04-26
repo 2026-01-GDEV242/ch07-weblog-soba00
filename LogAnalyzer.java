@@ -17,7 +17,7 @@ public class LogAnalyzer
      */
     public LogAnalyzer()
     {
-        this("weblog.txt"); //acts as default fallback behavior
+        this("demoData.txt"); //acts as default fallback behavior
     }
     
     public LogAnalyzer(String filename)
