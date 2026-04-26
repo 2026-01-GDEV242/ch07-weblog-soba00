@@ -29,18 +29,18 @@ public class LogAnalyzer
         reader = new LogfileReader(filename);
     }
     
-    
+    //loops through access log and counts how many appear
     public int numberOfAccesses()
     {
-        int i = 0;
+        int i = 0; //starts the count at zero
         
-        while(reader.hasNext())
+        while(reader.hasNext()) //will loop until the end (iterator detects no next item)
         {
             reader.next();
-            i++;
+            i++;                //moves to next and ups the count by one
         }
         
-        return i;
+        return i; //returns the count
     }
     
     
