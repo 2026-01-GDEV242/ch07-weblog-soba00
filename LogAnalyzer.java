@@ -69,12 +69,12 @@ public class LogAnalyzer
         int i = 0;
         for (int count : hourCounts)
         {
-            i++;
             if(count < toBeat)
             {
                 toBeat = count;
                 store = i;
             }
+            i++;    //yeahhh i shouldve just use a regular forloop lol
         }
         
         return store;
