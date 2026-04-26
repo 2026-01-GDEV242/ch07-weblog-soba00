@@ -102,9 +102,10 @@ public class LogAnalyzer
         for (int i = 0; i< hourCounts.length; i++) //learned my lesson
         {
             comboCount = hourCounts[i]+hourCounts[i++];
-            if(hourCounts[i] > toBeat)            
+            
+            if(comboCount > toBeat)            
             {
-                toBeat = hourCounts[i];
+                toBeat = comboCount;
                 store = i;
             }
         }
