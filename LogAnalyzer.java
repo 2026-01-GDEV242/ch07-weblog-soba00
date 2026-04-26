@@ -33,6 +33,13 @@ public class LogAnalyzer
     public int numberOfAccesses()
     {
         int i = 0;
+        
+        while(reader.hasNext())
+        {
+            reader.next();
+            i++;
+        }
+        
         return i;
     }
     
