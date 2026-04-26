@@ -44,7 +44,19 @@ public class LogAnalyzer
     }
     
     
-    public int busiestHour()
+    /**
+     * Analyze the hourly access data from the log file.
+     */
+    public void analyzeHourlyData()
+    {
+        while(reader.hasNext()) {
+            LogEntry entry = reader.next();
+            int hour = entry.getHour();
+            hourCounts[hour]++;
+        }
+    }
+    
+        public int busiestHour()
     {
         int store = 0;  //stores the index of the busiest hour
         int toBeat = 0; //stores the current highest number starting at zero cause no negatives
@@ -80,18 +92,6 @@ public class LogAnalyzer
         return store;
     }
     
-    /**
-     * Analyze the hourly access data from the log file.
-     */
-    public void analyzeHourlyData()
-    {
-        while(reader.hasNext()) {
-            LogEntry entry = reader.next();
-            int hour = entry.getHour();
-            hourCounts[hour]++;
-        }
-    }
-
     /**
      * Print the hourly counts.
      * These should have been set with a prior
