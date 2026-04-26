@@ -62,6 +62,24 @@ public class LogAnalyzer
         return store;
     }
     
+    public int quietestHour()
+    {
+        int store = 0;  //stores the index of the busiest hour
+        int toBeat = 0; //stores the current lowest number starting at zero cause no negatives
+        int i = 0;
+        for (int count : hourCounts)
+        {
+            i++;
+            if(count < toBeat)
+            {
+                toBeat = count;
+                store = i;
+            }
+        }
+        
+        return store;
+    }
+    
     /**
      * Analyze the hourly access data from the log file.
      */
