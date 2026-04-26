@@ -82,7 +82,7 @@ public class LogAnalyzer
 
         for (int i = 1; i< hourCounts.length; i++) //learned my lesson
         {
-            //checks if current hour is queier than current hour to beat
+            //checks if current hour is queiter than current hour to beat
             if(hourCounts[i] < toBeat)            
             {
                 toBeat = hourCounts[i];
@@ -96,18 +96,17 @@ public class LogAnalyzer
     
     public int busiestTwoHour()
     {
-        int store = 0;  //stores the index of first hour the busiest pair
-        int toBeat = 0; //stores the current highest number starting at zero cause no negatives
-        int i = 0;
-        for (int count : hourCounts)
+        int store = 0;  //stores the index of the first hour the busiest pair
+        int toBeat = hourCounts[0] + hourCounts[1]; //stores the current highest number starting at zero cause no negatives
+        int comboCount = 0;
+        for (int i = 0; i< hourCounts.length; i++) //learned my lesson
         {
-            
-            if(count > toBeat)
+            comboCount = hourCounts[i]+hourCounts[i++];
+            if(hourCounts[i] > toBeat)            
             {
-                toBeat = count;
+                toBeat = hourCounts[i];
                 store = i;
             }
-            i++; 
         }
         
         return store;
