@@ -40,7 +40,7 @@ public class LogAnalyzer
     }
     
     /**
-     * loops through access log and counts how many appear, reseting reader for next use
+     * loops through access log and counts how many appear, resetting reader for next use
      * 
      * @return total nuber of access log entries
      */
@@ -106,7 +106,7 @@ public class LogAnalyzer
 
         for (int i = 1; i< hourCounts.length; i++) //learned my lesson
         {
-            //checks if current hour is queiter than current hour to beat
+            //checks if current hour is quieter than current hour to beat
             if(hourCounts[i] < toBeat)            
             {
                 toBeat = hourCounts[i];
@@ -118,10 +118,10 @@ public class LogAnalyzer
     }
     
     /**
-     * Finds the two hour stretch with the hights total number of access entries and
-     * returns the starting hour
+     * Finds the two hour stretch with the highest total number of access entries and
+     * returns the starting hour  of that period
      * 
-     * @return the fist hour of the busiest two hour stretch
+     * @return the first hour of the busiest two hour period
      */
     public int busiestTwoHour()
     {
